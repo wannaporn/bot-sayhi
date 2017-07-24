@@ -1,5 +1,7 @@
 # bot-say-hi
 
+[ngrok](https://ngrok.com/) will publish your local to internet -- `./ngrok http 8888`
+
 ```php
 <?php
 
