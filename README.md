@@ -1,4 +1,4 @@
-# bot-translation
+# bot-say-hi
 
 ```php
 <?php
