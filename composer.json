@@ -1,0 +1,35 @@
+{
+    "name": "linemob/line-bot-sayhi",
+    "type": "library",
+    "description": "A Very Simple say hi to Line Bot.",
+    "keywords": [
+        "line",
+        "bot",
+        "hello"
+    ],
+    "homepage": "https://github.com/linemob",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "liverbool",
+            "homepage": "http://github.com/liverbool"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "": "src/"
+        },
+        "classmap": [
+        ]
+    },
+    "require": {
+        "php": ">=5.6",
+        "linemob/core": "^0.2.0",
+        "php-http/guzzle6-adapter": "^1.1"
+    },
+    "require-dev": {
+        "phpspec/phpspec": "^3.2",
+        "phpunit/phpunit": "^5.6",
+        "react/react": "^0.4.2"
+    }
+}
