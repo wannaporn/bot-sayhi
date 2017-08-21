@@ -8,6 +8,7 @@
 require __DIR__.'/vendor/autoload.php';
 
 require_once 'src/SayHiCommand.php';
+require_once 'src/HelloImageCommand.php';
 require_once 'src/SayHiMiddleware.php';
 
 use LineMob\Core\QuickStart;
@@ -33,6 +34,7 @@ $app = function (Request $request, Response $response) use ($config) {
 
         $receiver = $quickStart
             ->addCommand(SayHiCommand::class, true)
+            ->addCommand(HelloImageCommand::class)
             ->setup($config['line_channel_token'], $config['line_channel_secret'], ['verify' => false])
         ;
 
