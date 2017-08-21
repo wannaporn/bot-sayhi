@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "c17379e61e4e1c4b742e3a82c12c7b99",
+    "content-hash": "dae2a66e698432186955534acbdd80e0",
     "packages": [
         {
             "name": "guzzlehttp/guzzle",
@@ -368,16 +368,16 @@
         },
         {
             "name": "linemob/core",
-            "version": "dev-refactor",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/linemob/core.git",
-                "reference": "5eaea147073736d56675c0043598b139c6398a50"
+                "reference": "e772082a94ea5f81f02fa5c4662db0ed22c1f077"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/linemob/core/zipball/5eaea147073736d56675c0043598b139c6398a50",
-                "reference": "5eaea147073736d56675c0043598b139c6398a50",
+                "url": "https://api.github.com/repos/linemob/core/zipball/e772082a94ea5f81f02fa5c4662db0ed22c1f077",
+                "reference": "e772082a94ea5f81f02fa5c4662db0ed22c1f077",
                 "shasum": ""
             },
             "require": {
@@ -417,7 +417,7 @@
                 "bot",
                 "line"
             ],
-            "time": "2017-08-21 20:25:07"
+            "time": "2017-08-21 20:44:26"
         },
         {
             "name": "php-http/discovery",
