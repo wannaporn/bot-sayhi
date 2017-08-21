@@ -5,6 +5,7 @@ require __DIR__.'/vendor/autoload.php';
 require_once 'src/SayHiCommand.php';
 require_once 'src/HelloImageCommand.php';
 require_once 'src/SayHiMiddleware.php';
+require_once 'src/ThisIsImageMiddleware.php';
 
 use LineMob\Core\QuickStart;
 use React\EventLoop\Factory;
