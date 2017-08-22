@@ -2,9 +2,6 @@
 
 require __DIR__.'/vendor/autoload.php';
 
-require_once 'src/SayHiCommand.php';
-require_once 'src/SayHiMiddleware.php';
-
 use LineMob\Core\QuickStart;
 use React\EventLoop\Factory;
 use React\Http\Request;
@@ -14,8 +11,8 @@ use React\Http\Server as HttpServer;
 
 $port = '8888';
 $config = [
-    'line_channel_token' => 'jUvE46JVqWrP8zLOxfmVx+AznUp18g3ExX0tBgdAmNfmFCKHrw4EXGBUCPVf8+Fj60fN4FgRjdmY8AFEHCYrhTDOXGiq9L/nelkBp5l68pArnDMAQdOAYswbbcnE6MPUSLM1uRVSVJSmR8VoS5D2fwdB04t89/1O/w1cDnyilFU=',
-    'line_channel_secret' => '3aec579fe57eaa96398cbed86068e11a',
+    'line_channel_token' => 'your_own_bot_token',
+    'line_channel_secret' => 'your_own_bot_secret',
 ];
 
 $app = function (Request $request, Response $response) use ($config) {
@@ -23,10 +20,12 @@ $app = function (Request $request, Response $response) use ($config) {
 
         $quickStart = new QuickStart([
             new SayHiMiddleware(),
+            new ThisIsImageMiddleware(),
         ]);
 
         $receiver = $quickStart
             ->addCommand(SayHiCommand::class, true)
+            ->addCommand(HelloImageCommand::class)
             ->setup($config['line_channel_token'], $config['line_channel_secret'], ['verify' => false])
         ;
 
