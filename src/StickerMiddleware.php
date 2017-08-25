@@ -18,8 +18,6 @@ class StickerMiddleware implements Middleware
         }
 
         $command->message = new StickerTemplate;
-//        $command->message->packageId = 1;
-//        $command->message->stickerId = 102;
 
         $command->message->createMoon(102);
 

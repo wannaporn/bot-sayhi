@@ -23,8 +23,8 @@ class ImagemapMiddleware implements Middleware
         $command->message->width = 1040;
         $command->message->height = 1040;
 
-        $command->message->addLinkAction(new ActionArea(0, 0, 520, 1040), 'https://www.youtube.com/');
-        $command->message->addMessageAction(new ActionArea(0, 0, 1040, 1040), 'xxxxx');
+        $command->message->addLinkAction('https://www.youtube.com/', new ActionArea(0, 0, 520, 1040));
+        $command->message->addMessageAction('xxxxx', new ActionArea(0, 0, 1040, 1040));
 
         return $next($command);
     }

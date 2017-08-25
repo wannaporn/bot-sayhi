@@ -18,8 +18,8 @@ class AudioMiddleware implements Middleware
         }
 
         $command->message = new AudioTemplate;
-        $command->message->audioUrl = 'https://auphonic.com/media/audio-examples/auphonic-denoise-3-unprocessed.m4a';
-        $command->message->audioDuration = 46000;
+        $command->message->url = 'https://auphonic.com/media/audio-examples/auphonic-denoise-3-unprocessed.m4a';
+        $command->message->duration = 46000;
 
         return $next($command);
     }

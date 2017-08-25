@@ -18,8 +18,8 @@ class VideoMiddleware implements Middleware
         }
 
         $command->message = new VideoTemplate;
-        $command->message->videoUrl = 'https://www.w3schools.com/html/mov_bbb.mp4';
-        $command->message->videoPosterUrl = 'https://img.youtube.com/vi/MZ2tq0F8-ww/3.jpg';
+        $command->message->url = 'https://www.w3schools.com/html/mov_bbb.mp4';
+        $command->message->posterUrl = 'https://img.youtube.com/vi/MZ2tq0F8-ww/3.jpg';
 
         return $next($command);
     }
