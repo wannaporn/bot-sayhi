@@ -11,8 +11,8 @@ use React\Http\Server as HttpServer;
 
 $port = '8888';
 $config = [
-    'line_channel_token' => '8VgAyXN7IEudJZY5ErhLyrMSNahZzHeCdctrxVgkYMMamfL/sOWQg0GYgOlpILPXamKLQg6i19gaNeuo+ZvoR7WTBpXeAkZL2JaugerQ7WlcM+PfBg69o0Fv7zbb0b/Rxoq0Q85Dn26MklVVp025FwdB04t89/1O/w1cDnyilFU=',
-    'line_channel_secret' => '0948beff41d6dd952a32bea27202fa29',
+    'line_channel_token' => 'your_own_bot_token',
+    'line_channel_secret' => 'your_own_bot_token',
 ];
 
 $app = function (Request $request, Response $response) use ($config) {
