@@ -11,8 +11,8 @@ use React\Http\Server as HttpServer;
 
 $port = '8888';
 $config = [
-    'line_channel_token' => 'your_own_bot_token',
-    'line_channel_secret' => 'your_own_bot_secret',
+    'line_channel_token' => '8VgAyXN7IEudJZY5ErhLyrMSNahZzHeCdctrxVgkYMMamfL/sOWQg0GYgOlpILPXamKLQg6i19gaNeuo+ZvoR7WTBpXeAkZL2JaugerQ7WlcM+PfBg69o0Fv7zbb0b/Rxoq0Q85Dn26MklVVp025FwdB04t89/1O/w1cDnyilFU=',
+    'line_channel_secret' => '0948beff41d6dd952a32bea27202fa29',
 ];
 
 $app = function (Request $request, Response $response) use ($config) {
@@ -21,11 +21,21 @@ $app = function (Request $request, Response $response) use ($config) {
         $quickStart = new QuickStart([
             new SayHiMiddleware(),
             new ThisIsImageMiddleware(),
+            new ImagemapMiddleware(),
+            new VideoMiddleware(),
+            new AudioMiddleware(),
+            new StickerMiddleware(),
+            new LocationMiddleware(),
         ]);
 
         $receiver = $quickStart
             ->addCommand(SayHiCommand::class, true)
             ->addCommand(HelloImageCommand::class)
+            ->addCommand(ImagemapCommand::class)
+            ->addCommand(VideoCommand::class)
+            ->addCommand(AudioCommand::class)
+            ->addCommand(StickerCommand::class)
+            ->addCommand(LocationCommand::class)
             ->setup($config['line_channel_token'], $config['line_channel_secret'], ['verify' => false])
         ;
 
@@ -34,7 +44,7 @@ $app = function (Request $request, Response $response) use ($config) {
         var_dump($data);
 
         if ($receiver->validate($data, $signature)) {
-            var_dump($receiver->handle($data));
+            Var_dump($receiver->handle($data));
         } else {
             throw new \RuntimeException("Invalid signature: ".$signature);
         }
