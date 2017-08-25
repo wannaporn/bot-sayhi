@@ -44,7 +44,7 @@ $app = function (Request $request, Response $response) use ($config) {
         var_dump($data);
 
         if ($receiver->validate($data, $signature)) {
-            Var_dump($receiver->handle($data));
+            var_dump($receiver->handle($data));
         } else {
             throw new \RuntimeException("Invalid signature: ".$signature);
         }
