@@ -2,7 +2,7 @@
 
 use LineMob\Core\Command\AbstractCommand;
 
-class ImagemapCommand extends AbstractCommand
+class ImageMapCommand extends AbstractCommand
 {
     public $cmd = 'imagemap';
 }

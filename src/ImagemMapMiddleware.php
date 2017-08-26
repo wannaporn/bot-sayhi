@@ -2,10 +2,10 @@
 
 use League\Tactician\Middleware;
 use LineMob\Core\Command\AbstractCommand;
-use LineMob\Core\Template\Imagemap\ImagemapTemplate;
-use LineMob\Core\Template\Imagemap\ActionArea;
+use LineMob\Core\Template\ImageMap\ImageMapTemplate;
+use LineMob\Core\Template\ImageMap\ActionArea;
 
-class ImagemapMiddleware implements Middleware
+class ImageMapMiddleware implements Middleware
 {
     /**
      * @param AbstractCommand $command
@@ -14,11 +14,11 @@ class ImagemapMiddleware implements Middleware
      */
     public function execute($command, callable $next)
     {
-        if (!$command instanceof ImagemapCommand) {
+        if (!$command instanceof ImageMapCommand) {
             return $next($command);
         }
 
-        $command->message = new ImagemapTemplate();
+        $command->message = new ImageMapTemplate();
         $command->message->baseUrl = 'https://via.placeholder.com/1040x1040';
         $command->message->width = 1040;
         $command->message->height = 1040;
