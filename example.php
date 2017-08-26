@@ -21,7 +21,7 @@ $app = function (Request $request, Response $response) use ($config) {
         $quickStart = new QuickStart([
             new SayHiMiddleware(),
             new ThisIsImageMiddleware(),
-            new ImagemapMiddleware(),
+            new ImageMapMiddleware(),
             new VideoMiddleware(),
             new AudioMiddleware(),
             new StickerMiddleware(),
@@ -31,7 +31,7 @@ $app = function (Request $request, Response $response) use ($config) {
         $receiver = $quickStart
             ->addCommand(SayHiCommand::class, true)
             ->addCommand(HelloImageCommand::class)
-            ->addCommand(ImagemapCommand::class)
+            ->addCommand(ImageMapCommand::class)
             ->addCommand(VideoCommand::class)
             ->addCommand(AudioCommand::class)
             ->addCommand(StickerCommand::class)
