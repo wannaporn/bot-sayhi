@@ -372,12 +372,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/linemob/core.git",
-                "reference": "ab9b9c5a0a8941cee7f11d039d986463552428ec"
+                "reference": "3e286c761b77975442b375ac2f3ebc8cbb9a5461"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/linemob/core/zipball/ab9b9c5a0a8941cee7f11d039d986463552428ec",
-                "reference": "ab9b9c5a0a8941cee7f11d039d986463552428ec",
+                "url": "https://api.github.com/repos/linemob/core/zipball/3e286c761b77975442b375ac2f3ebc8cbb9a5461",
+                "reference": "3e286c761b77975442b375ac2f3ebc8cbb9a5461",
                 "shasum": ""
             },
             "require": {
@@ -418,7 +418,7 @@
                 "bot",
                 "line"
             ],
-            "time": "2017-08-29 14:45:55"
+            "time": "2017-08-29 15:16:00"
         },
         {
             "name": "php-http/discovery",
