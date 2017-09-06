@@ -1,5 +1,8 @@
 <?php
 
+namespace Middleware;
+
+use Command\AudioCommand;
 use League\Tactician\Middleware;
 use LineMob\Core\Command\AbstractCommand;
 use LineMob\Core\Template\AudioTemplate;

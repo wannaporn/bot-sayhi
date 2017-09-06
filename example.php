@@ -8,6 +8,26 @@ use React\Http\Request;
 use React\Http\Response;
 use React\Socket\Server as SocketServer;
 use React\Http\Server as HttpServer;
+use Middleware\SayHiMiddleware;
+use Middleware\ThisIsImageMiddleware;
+use Middleware\ImageMapMiddleware;
+use Middleware\VideoMiddleware;
+use Middleware\AudioMiddleware;
+use Middleware\StickerMiddleware;
+use Middleware\LocationMiddleware;
+use Middleware\ButtonsMiddleware;
+use Middleware\CarousalMiddleware;
+use Middleware\ConfirmMiddleware;
+use Command\SayHiCommand;
+use Command\HelloImageCommand;
+use Command\ImageMapCommand;
+use Command\VideoCommand;
+use Command\AudioCommand;
+use Command\StickerCommand;
+use Command\LocationCommand;
+use Command\ButtonsCommand;
+use Command\CarousalCommand;
+use Command\ConfirmCommand;
 
 $port = '8888';
 $config = [
@@ -26,6 +46,9 @@ $app = function (Request $request, Response $response) use ($config) {
             new AudioMiddleware(),
             new StickerMiddleware(),
             new LocationMiddleware(),
+            new ButtonsMiddleware(),
+            new CarousalMiddleware(),
+            new ConfirmMiddleware(),
         ]);
 
         $receiver = $quickStart
@@ -36,6 +59,9 @@ $app = function (Request $request, Response $response) use ($config) {
             ->addCommand(AudioCommand::class)
             ->addCommand(StickerCommand::class)
             ->addCommand(LocationCommand::class)
+            ->addCommand(ButtonsCommand::class)
+            ->addCommand(CarousalCommand::class)
+            ->addCommand(ConfirmCommand::class)
             ->setup($config['line_channel_token'], $config['line_channel_secret'], ['verify' => false])
         ;
 

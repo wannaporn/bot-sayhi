@@ -1,10 +1,13 @@
 <?php
 
+namespace Middleware;
+
+use Command\StickerCommand;
 use League\Tactician\Middleware;
 use LineMob\Core\Command\AbstractCommand;
-use LineMob\Core\Template\TextTemplate;
+use LineMob\Core\Template\StickerTemplate;
 
-class SayHiMiddleware implements Middleware
+class StickerMiddleware implements Middleware
 {
     /**
      * @param AbstractCommand $command
@@ -13,12 +16,13 @@ class SayHiMiddleware implements Middleware
      */
     public function execute($command, callable $next)
     {
-        if (!$command instanceof SayHiCommand) {
+        if (!$command instanceof StickerCommand) {
             return $next($command);
         }
 
-        $command->message = new TextTemplate;
-        $command->message->text = 'Say, Hi!';
+        $command->message = new StickerTemplate;
+
+        $command->message->createMoon(102);
 
         return $next($command);
     }
